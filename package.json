@@ -7,6 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "quasar dev",
+    "dev:ssr": "quasar dev -m ssr",
     "dev:electron": "quasar dev -m electron",
     "dev:ios": "quasar dev -m ios",
     "dev:android": "quasar dev -m android",
@@ -14,6 +15,7 @@
     "lighthouse:dev": "npx unlighthouse --no-cache --site http://localhost:9000",
     "lighthouse": "npx unlighthouse --no-cache --site https://pg-quasar-css.netlify.app",
     "build": "quasar build",
+    "build:ssr": "quasar build -m ssr",
     "build:electron": "quasar build -m electron",
     "build:ios": "quasar build -m ios",
     "build:android": "quasar build -m android",
