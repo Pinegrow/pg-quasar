@@ -46,6 +46,8 @@ Open your project in Vue Designer and follow the instructions displayed in the C
 
 ## Usage
 
+- **ACTION REQUIRED**: Currently, only SPA & SSR mode are active in the template. To use other modes (desktop, mobile etc), enable them by following the official Quasar documentation.
+
 ### Start your development server
 
 For Windows build when running Mac - run Windows in a virtual machine and run development process there
