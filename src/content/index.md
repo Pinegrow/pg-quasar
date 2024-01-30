@@ -74,7 +74,7 @@ npm run build:ios # Mobile - ios
 npm run build:android # Mobile - android
 ```
 
-## Icons
+### Icons
 
 ```bash
 npm run icons # regenerate icons & splash screens
