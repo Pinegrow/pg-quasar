@@ -2,7 +2,7 @@
 
 This is a starter template that pre-includes the [Pinegrow Quasar Module](https://www.npmjs.com/package/@pinegrow/quasar-module) and other goodies for Vue Designer.
 
-Demo - https://pg-quasar.netlify.app/
+Demo - https://pg-quasar-css.netlify.app/
 
 ## Vue Designer
 

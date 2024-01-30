@@ -6,7 +6,7 @@ export default {
   title: 'Vue Designer',
   description: 'Vue Designer Quasar - Quick start template',
   author: 'Pinegrow',
-  url: 'https://pg-quasar.netlify.app',
+  url: 'https://pg-quasar-css.netlify.app',
   nav: [
     {
       text: 'Home',

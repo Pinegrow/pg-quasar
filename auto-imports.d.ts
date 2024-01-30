@@ -6,22 +6,33 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const classNames: typeof import('./src/utils/index')['classNames']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
+  const darkTheme: typeof import('./src/utils/theme')['darkTheme']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
   const effectScope: typeof import('vue')['effectScope']
+  const fontUrls: typeof import('./src/utils/font')['fontUrls']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const getFontsWithFallback: typeof import('./src/utils/font')['getFontsWithFallback']
   const h: typeof import('vue')['h']
+  const heroImageUrl: typeof import('./src/utils/hero')['heroImageUrl']
   const inject: typeof import('vue')['inject']
+  const isCurrentRoute: typeof import('./src/composables/nav')['isCurrentRoute']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const joinUrl: typeof import('./src/utils/index')['joinUrl']
+  const kebabCase: typeof import('./src/utils/index')['kebabCase']
+  const lightTheme: typeof import('./src/utils/theme')['lightTheme']
   const markRaw: typeof import('vue')['markRaw']
   const nextTick: typeof import('vue')['nextTick']
+  const normalize: typeof import('./src/utils/index')['normalize']
+  const omit: typeof import('./src/utils/index')['omit']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
   const onBeforeUnmount: typeof import('vue')['onBeforeUnmount']
@@ -35,14 +46,17 @@ declare global {
   const onServerPrefetch: typeof import('vue')['onServerPrefetch']
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
+  const primary: typeof import('./src/utils/colors')['primary']
   const provide: typeof import('vue')['provide']
   const reactive: typeof import('vue')['reactive']
   const readonly: typeof import('vue')['readonly']
   const ref: typeof import('vue')['ref']
   const resolveComponent: typeof import('vue')['resolveComponent']
+  const secondary: typeof import('./src/utils/colors')['secondary']
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
+  const stores: typeof import('./src/stores/index')['default']
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
@@ -50,8 +64,12 @@ declare global {
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useCounterStore: typeof import('./src/stores/example-store')['useCounterStore']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useDark: typeof import('./src/composables/dark')['useDark']
+  const useMobileMenu: typeof import('./src/composables/mobile-menu')['useMobileMenu']
+  const useNav: typeof import('./src/composables/nav')['useNav']
   const useSlots: typeof import('vue')['useSlots']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
@@ -82,26 +100,53 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly classNames: UnwrapRef<
+      typeof import('./src/utils/index')['classNames']
+    >
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly darkTheme: UnwrapRef<
+      typeof import('./src/utils/theme')['darkTheme']
+    >
     readonly defineAsyncComponent: UnwrapRef<
       typeof import('vue')['defineAsyncComponent']
     >
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly fontUrls: UnwrapRef<typeof import('./src/utils/font')['fontUrls']>
     readonly getCurrentInstance: UnwrapRef<
       typeof import('vue')['getCurrentInstance']
     >
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly getFontsWithFallback: UnwrapRef<
+      typeof import('./src/utils/font')['getFontsWithFallback']
+    >
     readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly heroImageUrl: UnwrapRef<
+      typeof import('./src/utils/hero')['heroImageUrl']
+    >
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly isCurrentRoute: UnwrapRef<
+      typeof import('./src/composables/nav')['isCurrentRoute']
+    >
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly joinUrl: UnwrapRef<typeof import('./src/utils/index')['joinUrl']>
+    readonly kebabCase: UnwrapRef<
+      typeof import('./src/utils/index')['kebabCase']
+    >
+    readonly lightTheme: UnwrapRef<
+      typeof import('./src/utils/theme')['lightTheme']
+    >
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
+    readonly normalize: UnwrapRef<
+      typeof import('./src/utils/index')['normalize']
+    >
+    readonly omit: UnwrapRef<typeof import('./src/utils/index')['omit']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
@@ -119,6 +164,7 @@ declare module 'vue' {
     >
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
+    readonly primary: UnwrapRef<typeof import('./src/utils/colors')['primary']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
@@ -126,9 +172,13 @@ declare module 'vue' {
     readonly resolveComponent: UnwrapRef<
       typeof import('vue')['resolveComponent']
     >
+    readonly secondary: UnwrapRef<
+      typeof import('./src/utils/colors')['secondary']
+    >
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly stores: UnwrapRef<typeof import('./src/stores/index')['default']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
@@ -136,8 +186,18 @@ declare module 'vue' {
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useCounterStore: UnwrapRef<
+      typeof import('./src/stores/example-store')['useCounterStore']
+    >
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useDark: UnwrapRef<
+      typeof import('./src/composables/dark')['useDark']
+    >
+    readonly useMobileMenu: UnwrapRef<
+      typeof import('./src/composables/mobile-menu')['useMobileMenu']
+    >
+    readonly useNav: UnwrapRef<typeof import('./src/composables/nav')['useNav']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
@@ -149,26 +209,53 @@ declare module '@vue/runtime-core' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly classNames: UnwrapRef<
+      typeof import('./src/utils/index')['classNames']
+    >
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly darkTheme: UnwrapRef<
+      typeof import('./src/utils/theme')['darkTheme']
+    >
     readonly defineAsyncComponent: UnwrapRef<
       typeof import('vue')['defineAsyncComponent']
     >
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly fontUrls: UnwrapRef<typeof import('./src/utils/font')['fontUrls']>
     readonly getCurrentInstance: UnwrapRef<
       typeof import('vue')['getCurrentInstance']
     >
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly getFontsWithFallback: UnwrapRef<
+      typeof import('./src/utils/font')['getFontsWithFallback']
+    >
     readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly heroImageUrl: UnwrapRef<
+      typeof import('./src/utils/hero')['heroImageUrl']
+    >
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly isCurrentRoute: UnwrapRef<
+      typeof import('./src/composables/nav')['isCurrentRoute']
+    >
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly joinUrl: UnwrapRef<typeof import('./src/utils/index')['joinUrl']>
+    readonly kebabCase: UnwrapRef<
+      typeof import('./src/utils/index')['kebabCase']
+    >
+    readonly lightTheme: UnwrapRef<
+      typeof import('./src/utils/theme')['lightTheme']
+    >
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
+    readonly normalize: UnwrapRef<
+      typeof import('./src/utils/index')['normalize']
+    >
+    readonly omit: UnwrapRef<typeof import('./src/utils/index')['omit']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
@@ -186,6 +273,7 @@ declare module '@vue/runtime-core' {
     >
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
+    readonly primary: UnwrapRef<typeof import('./src/utils/colors')['primary']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
@@ -193,9 +281,13 @@ declare module '@vue/runtime-core' {
     readonly resolveComponent: UnwrapRef<
       typeof import('vue')['resolveComponent']
     >
+    readonly secondary: UnwrapRef<
+      typeof import('./src/utils/colors')['secondary']
+    >
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly stores: UnwrapRef<typeof import('./src/stores/index')['default']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
@@ -203,8 +295,18 @@ declare module '@vue/runtime-core' {
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useCounterStore: UnwrapRef<
+      typeof import('./src/stores/example-store')['useCounterStore']
+    >
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useDark: UnwrapRef<
+      typeof import('./src/composables/dark')['useDark']
+    >
+    readonly useMobileMenu: UnwrapRef<
+      typeof import('./src/composables/mobile-menu')['useMobileMenu']
+    >
+    readonly useNav: UnwrapRef<typeof import('./src/composables/nav')['useNav']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>

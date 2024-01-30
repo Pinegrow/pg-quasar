@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BaseIcon: typeof import('./src/components/BaseIcon.vue')['default']
+    DarkModeSwitch: typeof import('./src/components/DarkModeSwitch.vue')['default']
     EssentialLink: typeof import('./src/components/EssentialLink.vue')['default']
     ExampleComponent: typeof import('./src/components/ExampleComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

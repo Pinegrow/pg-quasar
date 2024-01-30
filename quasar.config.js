@@ -149,9 +149,9 @@ module.exports = configure(function (/* ctx */) {
             ],
             dirs: [
               /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-              // 'src/composables',
-              // 'src/utils',
-              // 'src/stores',
+              'src/composables',
+              'src/utils',
+              'src/stores',
             ],
             vueTemplate: true,
             dts: 'auto-imports.d.ts',
@@ -197,7 +197,7 @@ module.exports = configure(function (/* ctx */) {
           warning: pg_colors.warning['500'],
           negative: pg_colors.error['500'],
           info: pg_colors.info['500'],
-          dark: pg_colors.neutral['500'],
+          dark: pg_colors.neutral['900'],
         },
       },
 
@@ -212,7 +212,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: ['Dark'],
     },
 
     // animations: 'all', // --- includes all animations

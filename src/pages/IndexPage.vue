@@ -1,50 +1,22 @@
 <script setup lang="ts">
-  import { Todo, Meta } from '@/components/models'
-  import ExampleComponent from '@/components/ExampleComponent.vue'
-  import { ref } from 'vue'
-  import { pg_background_urls } from '~~/themes/pg-quasar/tokens.mjs'
-
-  const heroImageUrl =
-    pg_background_urls['design-image-large'] ||
-    pg_background_urls['design-image']
-
-  const todos = ref<Todo[]>([
-    {
-      id: 1,
-      content: 'ct1',
-    },
-    {
-      id: 2,
-      content: 'ct2',
-    },
-    {
-      id: 3,
-      content: 'ct3',
-    },
-    {
-      id: 4,
-      content: 'ct4',
-    },
-    {
-      id: 5,
-      content: 'ct5',
-    },
-  ])
-  const meta = ref<Meta>({
-    totalCount: 1200,
-  })
+  import { heroImageUrl } from '@/utils/hero'
 </script>
+
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-    <div style="display: flex; align-items: center">
-      <BaseIcon></BaseIcon
-      ><span style="margin-left: 4px">I'm a unocss icon</span>
+  <div>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1.5rem /* 24px */;
+        padding-bottom: 1.5rem /* 24px */;
+      "
+    >
+      <DarkModeSwitch /><span style="margin-left: 0.5rem; /* 8px */"
+        >A Fresh Start!</span
+      >
     </div>
-  </q-page>
+  </div>
 </template>
