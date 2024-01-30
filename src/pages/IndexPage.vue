@@ -34,7 +34,6 @@
     totalCount: 1200,
   })
 </script>
-
 <template>
   <q-page class="row items-center justify-evenly">
     <example-component
@@ -44,8 +43,8 @@
       :meta="meta"
     ></example-component>
     <div style="display: flex; align-items: center">
-      <BaseIcon></BaseIcon>
-      <span style="margin-left: 4px">I'm a unocss icon</span>
+      <BaseIcon></BaseIcon
+      ><span style="margin-left: 4px">I'm a unocss icon</span>
     </div>
   </q-page>
 </template>
