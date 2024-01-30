@@ -12,7 +12,7 @@
     "dev:android": "quasar dev -m android",
     "now": "npm run build && npm run preview",
     "lighthouse:dev": "npx unlighthouse --no-cache --site http://localhost:9000",
-    "lighthouse": "npx unlighthouse --no-cache --site https://pg-quasar-weather-app.netlify.app",
+    "lighthouse": "npx unlighthouse --no-cache --site https://pg-quasar-css.netlify.app",
     "build": "quasar build",
     "build:electron": "quasar build -m electron",
     "build:ios": "quasar build -m ios",

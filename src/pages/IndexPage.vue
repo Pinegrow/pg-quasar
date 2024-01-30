@@ -2,11 +2,7 @@
   import { Todo, Meta } from '@/components/models'
   import ExampleComponent from '@/components/ExampleComponent.vue'
   import { ref } from 'vue'
-  import { pg_background_urls } from '~~/themes/pg-quasar/tokens.mjs'
-
-  const heroImageUrl =
-    pg_background_urls['design-image-large'] ||
-    pg_background_urls['design-image']
+  import { heroImageUrl } from '@/utils/hero'
 
   const todos = ref<Todo[]>([
     {
@@ -43,8 +39,10 @@
       :meta="meta"
     ></example-component>
     <div style="display: flex; align-items: center">
-      <BaseIcon></BaseIcon
-      ><span style="margin-left: 4px">I'm a unocss icon</span>
+      <DarkModeSwitch />
+      <span style="margin-left: 8px">
+        Toggle light/dark mode. This button uses unocss icons</span
+      >
     </div>
   </q-page>
 </template>
