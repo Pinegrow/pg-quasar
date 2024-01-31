@@ -39,8 +39,7 @@
       :meta="meta"
     ></example-component>
     <div style="display: flex; align-items: center">
-      <DarkModeSwitch />
-      <span style="margin-left: 8px">
+      <DarkModeSwitch /><span style="margin-left: 8px">
         Toggle light/dark mode. This button uses unocss icons</span
       >
     </div>
