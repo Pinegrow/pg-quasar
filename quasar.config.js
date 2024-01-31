@@ -10,11 +10,6 @@
 
 const { configure } = require('quasar/wrappers')
 const path = require('node:path')
-const {
-  pg_colors,
-  pg_fonts,
-  pg_backgrounds,
-} = require('./themes/pg-quasar/tokens.cjs')
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -34,6 +29,7 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
+      { path: 'theme', server: false },
       { path: 'devtools', server: false }, // this boot file gets embedded only on client-side
     ],
 
@@ -188,18 +184,7 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {
-        brand: {
-          primary: pg_colors.primary['500'],
-          secondary: pg_colors.secondary['500'],
-          accent: pg_colors.tertiary['500'],
-          positive: pg_colors.success['500'],
-          warning: pg_colors.warning['500'],
-          negative: pg_colors.error['500'],
-          info: pg_colors.info['500'],
-          dark: pg_colors.neutral['900'],
-        },
-      },
+      config: {},
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
