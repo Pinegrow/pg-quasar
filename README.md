@@ -82,7 +82,7 @@ npm run icons # regenerate icons & splash screens
 
 ### Analyze
 
-Set `analyze: true` in your config file and run the necessary `build` command. This will generate and open an HTML report containing bundle size information.
+Set `build > analyze` to `true` in your config file and run the necessary `build` command. This will generate and open an HTML report containing bundle size information.
 
 ```bash
 npm run build # use the necessary build command from above build section
