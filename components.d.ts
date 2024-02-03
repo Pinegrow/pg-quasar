@@ -11,6 +11,7 @@ declare module 'vue' {
     DarkModeSwitch: typeof import('./src/components/DarkModeSwitch.vue')['default']
     EssentialLink: typeof import('./src/components/EssentialLink.vue')['default']
     ExampleComponent: typeof import('./src/components/ExampleComponent.vue')['default']
+    HeadAndMeta: typeof import('./src/components/HeadAndMeta.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

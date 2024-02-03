@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="column justify-center">
     <p>{{ title }}</p>
     <ul>
       <li v-for="todo in todos" :key="todo.id" @click="increment">
@@ -11,7 +11,6 @@
     <p>Clicks on todos: {{ clickCount }}</p>
   </div>
 </template>
-
 <script setup lang="ts">
   import { computed, ref } from 'vue'
   import { Todo, Meta } from './models'

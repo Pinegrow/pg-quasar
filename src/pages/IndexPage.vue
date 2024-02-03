@@ -2,7 +2,27 @@
   import { Todo, Meta } from '@/components/models'
   import ExampleComponent from '@/components/ExampleComponent.vue'
   import { ref } from 'vue'
+  import { useMeta } from 'quasar'
   import { heroImageUrl } from '@/utils/hero'
+
+  const pageMeta = {
+    // layout: 'default',
+    // name: 'new-page',
+    // alias: 'new-page',
+    title: ref('Home'),
+    description: 'Quasar Weather App',
+    // hidden: true,
+    navOrder: '1',
+    type: 'primary',
+    icon: 'i-mdi-home',
+    // ogImage: 'images/ogImage.png', // url or local images inside public folder, for eg, ~/public/images/ogImage.png
+  }
+
+  useMeta(() => {
+    return {
+      title: pageMeta.title.value,
+    }
+  })
 
   const todos = ref<Todo[]>([
     {
@@ -31,17 +51,22 @@
   })
 </script>
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-    <div style="display: flex; align-items: center">
-      <DarkModeSwitch /><span style="margin-left: 8px">
-        Toggle light/dark mode. This button uses unocss icons</span
-      >
-    </div>
+  <q-page>
+    <q-img :src="heroImageUrl" cover height="250">
+      <div class="full-height full-width justify-evenly row">
+        <example-component
+          title="Example component"
+          active
+          :todos="todos"
+          :meta="meta"
+        ></example-component>
+        <div class="flex items-center row">
+          <DarkModeSwitch />
+          <span style="margin-left: 8px">
+            Toggle light/dark mode. This button uses unocss icons</span
+          >
+        </div>
+      </div>
+    </q-img>
   </q-page>
 </template>
