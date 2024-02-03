@@ -29,6 +29,7 @@ module.exports = configure(function (ctx) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
+      'head',
       { path: 'theme', server: false },
       { path: 'devtools', server: false }, // this boot file gets embedded only on client-side
     ],
@@ -197,7 +198,7 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Dark'],
+      plugins: ['Dark', 'Meta'],
     },
 
     // animations: 'all', // --- includes all animations
