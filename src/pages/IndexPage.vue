@@ -51,8 +51,9 @@
 </script>
 <template>
   <q-page>
-    <q-img :src="heroImageUrl" cover height="250">
-      <div class="full-height full-width justify-evenly row">
+    <div class="relative-position">
+      <q-img :src="heroImageUrl" cover height="250"> </q-img>
+      <div class="absolute-top full-height justify-evenly row">
         <ExampleComponent
           title="Example component"
           active
@@ -65,6 +66,6 @@
           >
         </div>
       </div>
-    </q-img>
+    </div>
   </q-page>
 </template>
