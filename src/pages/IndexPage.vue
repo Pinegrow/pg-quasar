@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import { Todo, Meta } from '@/components/models'
-  import ExampleComponent from '@/components/ExampleComponent.vue'
   import { ref } from 'vue'
   import { useMeta } from 'quasar'
   import { heroImageUrl } from '@/utils/hero'
@@ -54,15 +53,14 @@
   <q-page>
     <q-img :src="heroImageUrl" cover height="250">
       <div class="full-height full-width justify-evenly row">
-        <example-component
+        <ExampleComponent
           title="Example component"
           active
           :todos="todos"
           :meta="meta"
-        ></example-component>
-        <div class="flex items-center row">
-          <DarkModeSwitch />
-          <span style="margin-left: 8px">
+        ></ExampleComponent>
+        <div class="flex items-center">
+          <DarkModeSwitch /><span style="margin-left: 8px">
             Toggle light/dark mode. This button uses unocss icons</span
           >
         </div>
