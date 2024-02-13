@@ -53,15 +53,22 @@
   <q-page>
     <div class="relative-position">
       <q-img :src="heroImageUrl" cover height="250"> </q-img>
-      <div class="absolute-top full-height justify-evenly row">
-        <ExampleComponent
-          title="Example component"
-          active
-          :todos="todos"
-          :meta="meta"
-        ></ExampleComponent>
-        <div class="flex items-center">
-          <DarkModeSwitch /><span style="margin-left: 8px">
+      <div class="flex justify-center q-gutter-lg q-pb-sm q-pt-sm">
+        <span>First</span>
+        <span>Second</span>
+      </div>
+      <div class="justify-evenly q-col-gutter-sm row">
+        <div class="column">
+          <ExampleComponent
+            title="Example component"
+            active
+            :todos="todos"
+            :meta="meta"
+          ></ExampleComponent>
+        </div>
+        <div class="col-auto column items-center justify-center">
+          <DarkModeSwitch />
+          <span style="margin-left: 8px" class="q-mt-xs">
             Toggle light/dark mode. This button uses unocss icons</span
           >
         </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="column justify-center">
+  <div>
     <p>{{ title }}</p>
     <ul>
       <li v-for="todo in todos" :key="todo.id" @click="increment">
