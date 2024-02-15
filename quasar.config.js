@@ -23,7 +23,7 @@ module.exports = configure(function (ctx) {
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
-    // preFetch: true,
+    preFetch: true,
 
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
@@ -40,7 +40,7 @@ module.exports = configure(function (ctx) {
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
-      // 'mdi-v5',
+      'mdi-v5',
       // 'fontawesome-v6',
       // 'eva-icons',
       // 'themify',
@@ -50,6 +50,27 @@ module.exports = configure(function (ctx) {
       'roboto-font', // optional, you are not bound to it
       'material-icons', // optional, you are not bound to it
     ],
+
+    // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
+    framework: {
+      iconSet: 'mdi-v5',
+      // iconSet: 'svg-mdi-v5',
+      config: {},
+      // Make spacing utilities responsive
+      cssAddon: true,
+      // iconSet: 'material-icons', // Quasar icon set
+      // lang: 'en-US', // Quasar language pack
+
+      // For special cases outside of where the auto-import strategy can have an impact
+      // (like functional components as one of the examples),
+      // you can manually specify Quasar components/directives to be available everywhere:
+      //
+      // components: [],
+      // directives: [],
+
+      // Quasar plugins
+      plugins: ['Dark', 'Meta'],
+    },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
@@ -137,7 +158,7 @@ module.exports = configure(function (ctx) {
             ],
             imports: [
               'vue',
-              // 'vue-router',
+              'vue-router',
               // 'vue-i18n',
               // 'vue/macros',
               // '@vueuse/head',
@@ -181,25 +202,6 @@ module.exports = configure(function (ctx) {
     devServer: {
       // https: true
       open: false, // opens browser window automatically
-    },
-
-    // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
-    framework: {
-      config: {},
-      // Make spacing utilities responsive
-      cssAddon: true,
-      // iconSet: 'material-icons', // Quasar icon set
-      // lang: 'en-US', // Quasar language pack
-
-      // For special cases outside of where the auto-import strategy can have an impact
-      // (like functional components as one of the examples),
-      // you can manually specify Quasar components/directives to be available everywhere:
-      //
-      // components: [],
-      // directives: [],
-
-      // Quasar plugins
-      plugins: ['Dark', 'Meta'],
     },
 
     // animations: 'all', // --- includes all animations
