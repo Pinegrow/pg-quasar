@@ -1,6 +1,5 @@
 <script setup lang="ts">
-  import { Todo, Meta } from '@/components/models'
-  import { ref } from 'vue'
+  import { Todo, Meta } from '@/types/models'
   import { useMeta } from 'quasar'
   import { heroImageUrl } from '@/utils/hero'
 
@@ -54,7 +53,8 @@
     <div class="relative-position">
       <q-img :src="heroImageUrl" cover height="250"> </q-img>
       <div class="flex justify-center q-gutter-lg q-pb-sm q-pt-sm">
-        <span>First</span><span>Second</span>
+        <span>First</span>
+        <span>Second</span>
       </div>
       <div class="justify-evenly q-col-gutter-sm row">
         <div class="column">
@@ -66,7 +66,8 @@
           ></ExampleComponent>
         </div>
         <div class="col-auto column items-center justify-center">
-          <DarkModeSwitch /><span style="margin-left: 8px" class="q-mt-xs">
+          <DarkModeSwitch />
+          <span style="margin-left: 8px" class="q-mt-xs">
             Toggle light/dark mode. This button uses unocss icons</span
           >
         </div>
