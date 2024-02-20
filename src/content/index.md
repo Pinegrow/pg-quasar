@@ -55,8 +55,8 @@ For iOS (Mac only) - install Xcode before starting development server
 For Android - install Android Studio, Android File Transfer, setup and launch Android Virtual Device, and then start the development server
 
 ```bash
-npm run dev # Web - SPA,
-npm run dev:ssr # Web - SSR SPA,
+npm run dev # Web - SPA
+npm run dev:ssr # Web - SSR SPA
 npm run dev:electron # Desktop
 npm run dev:ios # Mobile - ios
 npm run dev:android # Mobile - android
@@ -67,8 +67,8 @@ npm run dev:android # Mobile - android
 For Windows build when running Mac - uncomment the `platform: 'win32'` line in `quasar.config.js` and run `npm run build:electron`
 
 ```bash
-npm run build # Web - SPA,
-npm run build:ssr # Web - SSR SPA,
+npm run build # Web - SPA
+npm run build:ssr # Web - SSR SPA
 npm run build:electron # Desktop
 npm run build:ios # Mobile - ios
 npm run build:android # Mobile - android
@@ -82,8 +82,10 @@ npm run icons # regenerate icons & splash screens
 
 ### Analyze
 
+Set `build > analyze` to `true` in your config file and run the necessary `build` command. This will generate and open an HTML report containing bundle size information.
+
 ```bash
-npm run analyze # bundle sizes
+npm run build # use the necessary build command from above build section
 ```
 
 ### Preview
@@ -117,6 +119,7 @@ Check out the [deployment documentation](https://quasar.dev/quasar-cli-webpack/d
 ### UI Frameworks
 
 - [Quasar](https://quasar.dev/components/) - There’s a component for almost every web development need within Quasar. Each of Quasar’s components is carefully crafted to offer you the best possible experience for your users. Quasar is designed with performance & responsiveness in mind – so the overhead of using Quasar is barely noticeable. This attention to performance and good design is something that gives us special pride.
+  👉 Note: Quasar's extended spacing utilities are enabled by setting `framework.cssAddon: true` in quasar config.
 
 ### Icons
 

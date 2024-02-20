@@ -119,6 +119,7 @@ Check out the [deployment documentation](https://quasar.dev/quasar-cli-webpack/d
 ### UI Frameworks
 
 - [Quasar](https://quasar.dev/components/) - There’s a component for almost every web development need within Quasar. Each of Quasar’s components is carefully crafted to offer you the best possible experience for your users. Quasar is designed with performance & responsiveness in mind – so the overhead of using Quasar is barely noticeable. This attention to performance and good design is something that gives us special pride.
+  👉 Note: Quasar's extended spacing utilities are enabled by setting `framework.cssAddon: true` in quasar config.
 
 ### Icons
 
