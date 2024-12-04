@@ -5,7 +5,6 @@
   "productName": "Quasar App",
   "author": "Pinegrow <vuedesigner@pinegrow.com>",
   "homepage": "https://pg-quasar-css.netlify.app",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/pinegrow/pg-quasar.git"
