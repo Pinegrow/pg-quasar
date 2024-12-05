@@ -21,7 +21,7 @@ declare global {
   const h: typeof import('vue')['h']
   const heroImageUrl: typeof import('./src/utils/hero')['heroImageUrl']
   const inject: typeof import('vue')['inject']
-  const isCurrentRoute: typeof import('./src/composables/nav')['isCurrentRoute']
+  const isCurrentRoute: typeof import('./src/composables/nav-menu')['isCurrentRoute']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
@@ -35,6 +35,8 @@ declare global {
   const omit: typeof import('./src/utils/index')['omit']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
+  const onBeforeRouteLeave: typeof import('vue-router')['onBeforeRouteLeave']
+  const onBeforeRouteUpdate: typeof import('vue-router')['onBeforeRouteUpdate']
   const onBeforeUnmount: typeof import('vue')['onBeforeUnmount']
   const onBeforeUpdate: typeof import('vue')['onBeforeUpdate']
   const onDeactivated: typeof import('vue')['onDeactivated']
@@ -68,8 +70,12 @@ declare global {
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useDark: typeof import('./src/composables/dark')['useDark']
+  const useLink: typeof import('vue-router')['useLink']
   const useMobileMenu: typeof import('./src/composables/mobile-menu')['useMobileMenu']
   const useNav: typeof import('./src/composables/nav')['useNav']
+  const useNavMenu: typeof import('./src/composables/nav-menu')['useNavMenu']
+  const useRoute: typeof import('vue-router')['useRoute']
+  const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
   const useTheme: typeof import('./src/composables/theme')['useTheme']
   const watch: typeof import('vue')['watch']
@@ -93,7 +99,6 @@ declare module 'vue' {
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
-    readonly darkTheme: UnwrapRef<typeof import('./src/utils/theme')['darkTheme']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
@@ -104,20 +109,21 @@ declare module 'vue' {
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly heroImageUrl: UnwrapRef<typeof import('./src/utils/hero')['heroImageUrl']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
-    readonly isCurrentRoute: UnwrapRef<typeof import('./src/composables/nav')['isCurrentRoute']>
+    readonly isCurrentRoute: UnwrapRef<typeof import('./src/composables/nav-menu')['isCurrentRoute']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly joinUrl: UnwrapRef<typeof import('./src/utils/index')['joinUrl']>
     readonly kebabCase: UnwrapRef<typeof import('./src/utils/index')['kebabCase']>
-    readonly lightTheme: UnwrapRef<typeof import('./src/utils/theme')['lightTheme']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly normalize: UnwrapRef<typeof import('./src/utils/index')['normalize']>
     readonly omit: UnwrapRef<typeof import('./src/utils/index')['omit']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
+    readonly onBeforeRouteLeave: UnwrapRef<typeof import('vue-router')['onBeforeRouteLeave']>
+    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('vue-router')['onBeforeRouteUpdate']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
     readonly onBeforeUpdate: UnwrapRef<typeof import('vue')['onBeforeUpdate']>
     readonly onDeactivated: UnwrapRef<typeof import('vue')['onDeactivated']>
@@ -151,8 +157,11 @@ declare module 'vue' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useDark: UnwrapRef<typeof import('./src/composables/dark')['useDark']>
+    readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useMobileMenu: UnwrapRef<typeof import('./src/composables/mobile-menu')['useMobileMenu']>
-    readonly useNav: UnwrapRef<typeof import('./src/composables/nav')['useNav']>
+    readonly useNavMenu: UnwrapRef<typeof import('./src/composables/nav-menu')['useNavMenu']>
+    readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
+    readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTheme: UnwrapRef<typeof import('./src/composables/theme')['useTheme']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
@@ -169,7 +178,6 @@ declare module '@vue/runtime-core' {
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
-    readonly darkTheme: UnwrapRef<typeof import('./src/utils/theme')['darkTheme']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
@@ -180,20 +188,21 @@ declare module '@vue/runtime-core' {
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly heroImageUrl: UnwrapRef<typeof import('./src/utils/hero')['heroImageUrl']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
-    readonly isCurrentRoute: UnwrapRef<typeof import('./src/composables/nav')['isCurrentRoute']>
+    readonly isCurrentRoute: UnwrapRef<typeof import('./src/composables/nav-menu')['isCurrentRoute']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly joinUrl: UnwrapRef<typeof import('./src/utils/index')['joinUrl']>
     readonly kebabCase: UnwrapRef<typeof import('./src/utils/index')['kebabCase']>
-    readonly lightTheme: UnwrapRef<typeof import('./src/utils/theme')['lightTheme']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly normalize: UnwrapRef<typeof import('./src/utils/index')['normalize']>
     readonly omit: UnwrapRef<typeof import('./src/utils/index')['omit']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
+    readonly onBeforeRouteLeave: UnwrapRef<typeof import('vue-router')['onBeforeRouteLeave']>
+    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('vue-router')['onBeforeRouteUpdate']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
     readonly onBeforeUpdate: UnwrapRef<typeof import('vue')['onBeforeUpdate']>
     readonly onDeactivated: UnwrapRef<typeof import('vue')['onDeactivated']>
@@ -227,8 +236,11 @@ declare module '@vue/runtime-core' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useDark: UnwrapRef<typeof import('./src/composables/dark')['useDark']>
+    readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useMobileMenu: UnwrapRef<typeof import('./src/composables/mobile-menu')['useMobileMenu']>
-    readonly useNav: UnwrapRef<typeof import('./src/composables/nav')['useNav']>
+    readonly useNavMenu: UnwrapRef<typeof import('./src/composables/nav-menu')['useNavMenu']>
+    readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
+    readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useTheme: UnwrapRef<typeof import('./src/composables/theme')['useTheme']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
