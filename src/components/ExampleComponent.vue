@@ -12,7 +12,7 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { Todo, Meta } from '@/types/models'
+  import type { Todo, Meta } from '@/types/models'
 
   interface Props {
     title: string

@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  definePage({
+    name: 'Home',
+    // alias: ['home'],
+    meta: {
+      title: 'Home',
+      description: 'Quasar App',
+    },
+  })
+</script>
 
 <template>
   <div

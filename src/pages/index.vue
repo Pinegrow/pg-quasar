@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { Todo, Meta } from '@/types/models'
+  import type { Todo, Meta } from '@/types/models'
   import { useMeta } from 'quasar'
   import { heroImageUrl } from '@/utils/hero'
 

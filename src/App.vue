@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import 'uno.css'
+  // import 'virtual:uno.css'
   import { useQuasar } from 'quasar'
   const $q = useQuasar()
   $q.iconMapFn = (iconName) => {
